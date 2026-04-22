@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang='en' className={`${RobotoFlex.variable} h-full antialiased`}>
       <body className='min-h-full flex flex-col'>
         {' '}
-        <div className='font-black-slanted'>HEY THERE</div>
+        {/* <div className='font-black-slanted'>HEY THERE</div> */}
         {children}
       </body>
     </html>
