@@ -36,10 +36,17 @@ export default function Scene({
     return materialMap;
   }, [textures]);
 
+  const currentKnombColor = KEYCAP_TEXTURES.find(
+    (t) => t.id === selectedTextureId,
+  )?.knobColor;
+
   return (
     <Stage environment={'city'} intensity={0.05} shadows='contact'>
       <group>
-        <Keyboard keycapMaterial={materials[selectedTextureId]} />
+        <Keyboard
+          keycapMaterial={materials[selectedTextureId]}
+          knobColor={currentKnombColor}
+        />
       </group>
     </Stage>
   );
