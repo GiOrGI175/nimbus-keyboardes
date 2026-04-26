@@ -7,14 +7,14 @@
       "id": "default",
       "name": "Default",
       "description": "Default",
-      "imageUrl": "",
+      "imageUrl": "https://images.prismic.io/nimbus-keyboardes/shared-slices/color_changer/default/ae2fb4e8b6a2cd069ed1eec6c09f7ebfeb53f00b.png?auto=compress%2Cformat",
       "docURL": "...",
       "version": "initial",
       "primary": {
         "heading": {
           "type": "StructuredText",
           "config": {
-            "label": "Heading",
+            "label": "heading",
             "placeholder": "",
             "multi": "heading2",
             "allowTargetBlank": true
