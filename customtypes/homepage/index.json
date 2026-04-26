@@ -11,6 +11,9 @@
           "choices": {
             "hero": {
               "type": "SharedSlice"
+            },
+            "bento_box": {
+              "type": "SharedSlice"
             }
           }
         }

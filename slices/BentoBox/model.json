@@ -1,0 +1,65 @@
+{
+  "id": "bento_box",
+  "type": "SharedSlice",
+  "name": "BentoBox",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Default",
+      "imageUrl": "",
+      "docURL": "...",
+      "version": "initial",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "heading",
+            "placeholder": "",
+            "multi": "heading2",
+            "allowTargetBlank": true
+          }
+        },
+        "items": {
+          "type": "Group",
+          "config": {
+            "label": "items",
+            "repeat": true,
+            "fields": {
+              "size": {
+                "type": "Select",
+                "config": {
+                  "label": "Size",
+                  "placeholder": "",
+                  "options": [
+                    "Small",
+                    "Medium",
+                    "Large"
+                  ]
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "text": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Text",
+                  "placeholder": "",
+                  "multi": "paragraph",
+                  "allowTargetBlank": true
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "description": "BentoBox"
+}
