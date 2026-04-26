@@ -1,0 +1,36 @@
+{
+  "id": "color_changer",
+  "type": "SharedSlice",
+  "name": "ColorChanger",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Default",
+      "imageUrl": "",
+      "docURL": "...",
+      "version": "initial",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "",
+            "multi": "heading2",
+            "allowTargetBlank": true
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "multi": "paragraph,strong,em",
+            "allowTargetBlank": true
+          }
+        }
+      }
+    }
+  ],
+  "description": "ColorChanger"
+}
