@@ -18,58 +18,58 @@ gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger);
  */
 export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
+useGSAP(() => {
+  const mm = gsap.matchMedia();
+
+  mm.add('(prefers-reduced-motion: no-preference)', () => {
+    const split = SplitText.create('.hero-heading', {
+      type: 'chars, lines',
+      mask: 'lines',
+      linesClass: 'line++',
+    });
+
+    const tl = gsap.timeline({ delay: 4.2 });
+
+    tl.from(split.chars, {
+      opacity: 0,
+      y: -120,
+      ease: 'back',
+      duration: 0.4,
+      stagger: 0.07,
+    }).to('.hero-body', {
+      opacity: 1,
+      duration: 0.6,
+      ease: 'power2.out',
+    });
+
+    gsap.fromTo(
+      '.hero-scene',
+      {
+        background:
+          'linear-gradient(to bottom, #000000, #0f172a, #062f4a, #7fa0b9)',
+      },
+      {
+        background:
+          'linear-gradient(to bottom, #ffffff, #ffffff, #ffffff, #ffffff)',
+        scrollTrigger: {
+          trigger: '.hero',
+          start: 'top top',
+          end: '50% bottom',
+          scrub: 1,
+        },
+      },
+    );
+  });
+
+  mm.add('(prefers-reduced-motion: reduce)', () => {
+    gsap.set('./hero-heading, .hero-body', { opacity: 1 });
+  });
+});
+
 /**
  * Component for "Hero" Slices.
  */
 const Hero: FC<HeroProps> = ({ slice }) => {
-  useGSAP(() => {
-    const mm = gsap.matchMedia();
-
-    mm.add('(prefers-reduced-motion: no-preference)', () => {
-      const split = SplitText.create('.hero-heading', {
-        type: 'chars, lines',
-        mask: 'lines',
-        linesClass: 'line++',
-      });
-
-      const tl = gsap.timeline({ delay: 4.2 });
-
-      tl.from(split.chars, {
-        opacity: 0,
-        y: -120,
-        ease: 'back',
-        duration: 0.4,
-        stagger: 0.07,
-      }).to('.hero-body', {
-        opacity: 1,
-        duration: 0.6,
-        ease: 'power2.out',
-      });
-
-      gsap.fromTo(
-        '.hero-scene',
-        {
-          background:
-            'linear-gradient(to bottom, #000000, #0f172a, #062f4a, #7fa0b9)',
-        },
-        {
-          background:
-            'linear-gradient(to bottom, #ffffff, #ffffff, #ffffff, #ffffff)',
-          scrollTrigger: {
-            trigger: '.hero',
-            start: 'top top',
-            end: '50% bottom',
-            scrub: 1,
-          },
-        },
-      );
-    });
-
-    mm.add('(prefers-reduced-motion: reduce)', () => {
-      gsap.set('./hero-heading, .hero-body', { opacity: 1 });
-    });
-  });
-
   return (
     <section
       data-slice-type={slice.slice_type}
