@@ -3,6 +3,7 @@ import { Content, isFilled } from '@prismicio/client';
 import { PrismicRichText, SliceComponentProps } from '@prismicio/react';
 import { Bounded } from '@/components/Bounded';
 import FadeIn from '@/components/FadeIn';
+import SharedCanvas from '@/components/SharedCanvas';
 
 /**
  * Props for `SlicePlayground`.
@@ -42,7 +43,7 @@ const SlicePlayground: FC<SlicePlaygroundProps> = ({ slice }) => {
         >
           {slice.primary.switches.map((item) =>
             isFilled.contentRelationship(item.switch) ? (
-              <div key={item.switch.id}>{item.switch.uid}</div>
+              <SharedCanvas key={item.switch.id} color={item.switch} />
             ) : null,
           )}
         </FadeIn>
