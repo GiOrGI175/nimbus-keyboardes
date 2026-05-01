@@ -29,10 +29,10 @@
             "allowTargetBlank": true
           }
         },
-        "swiches": {
+        "switches": {
           "type": "Group",
           "config": {
-            "label": "Swiches",
+            "label": "Switches",
             "repeat": true,
             "fields": {
               "switch": {
