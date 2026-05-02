@@ -20,6 +20,9 @@
             },
             "slice_playground": {
               "type": "SharedSlice"
+            },
+            "marquee": {
+              "type": "SharedSlice"
             }
           }
         }

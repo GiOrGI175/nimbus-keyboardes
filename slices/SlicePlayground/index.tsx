@@ -9,7 +9,7 @@ import SharedCanvas from '@/components/SharedCanvas';
  * Props for `SlicePlayground`.
  */
 export type SlicePlaygroundProps =
-  SliceComponentProps<Content.SwitchPlaygroundSlice>;
+  SliceComponentProps<Content.SlicePlaygroundSlice>;
 
 /**
  * Component for "SlicePlayground" Slices.
